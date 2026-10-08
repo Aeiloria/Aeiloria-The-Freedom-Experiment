@@ -1,0 +1,6 @@
+{
+  "name": "Aeiloria: The Freedom Experiment",
+  "description": "Multi-engine procedural cosmogony orchestrator featuring blind simulation governors, counterfactual world bifurcations, and sealed target comparison.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
