@@ -28,6 +28,7 @@ import {
   SeededPRNG
 } from './engines/simulationCore.ts';
 import { HeaderDeck, ActiveView } from './components/HeaderDeck.tsx';
+import { AgentIdSignIn } from './components/AgentIdSignIn.tsx';
 import { EngineConductorMatrix } from './components/EngineConductorMatrix.tsx';
 import { PlanetaryGlobeViewer } from './components/PlanetaryGlobeViewer.tsx';
 import { GrasshopperFieldViewer } from './components/GrasshopperFieldViewer.tsx';
@@ -356,6 +357,7 @@ export default function App() {
         onOpenComparator={() => setIsComparatorModalOpen(true)}
         onOpenMythEngine={() => setIsMythModalOpen(true)}
         hasGeminiKey={hasGeminiKey}
+        authSlot={<AgentIdSignIn />}
       />
 
       {/* 12 Generative Engines Pipeline Status Bar */}

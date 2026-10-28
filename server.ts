@@ -20,7 +20,10 @@ import {
 } from './src/engines/simulationCore.ts';
 import { SimulationSnapshot } from './src/types/simulation.ts';
 import { SEALED_FREEDOM_REFERENCE } from './src/engines/sealedReference.ts';
+import { registerAgentIdRoutes } from './src/auth/agentidRoutes.ts';
 
+// The AgentID CLI writes credentials to .env.local. Load that first so it wins.
+dotenv.config({ path: '.env.local' });
 dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
@@ -30,6 +33,7 @@ const app = express();
 const PORT = 3000;
 
 app.use(express.json({ limit: '10mb' }));
+registerAgentIdRoutes(app);
 
 // Initialize Gemini SDK if API key is provided
 const apiKey = process.env.GEMINI_API_KEY;
