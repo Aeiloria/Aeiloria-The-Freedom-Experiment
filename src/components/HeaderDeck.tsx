@@ -16,6 +16,7 @@ interface HeaderDeckProps {
   onOpenComparator: () => void;
   onOpenMythEngine: () => void;
   hasGeminiKey: boolean;
+  authSlot?: React.ReactNode;
 }
 
 export const HeaderDeck: React.FC<HeaderDeckProps> = ({
@@ -32,6 +33,7 @@ export const HeaderDeck: React.FC<HeaderDeckProps> = ({
   onOpenComparator,
   onOpenMythEngine,
   hasGeminiKey,
+  authSlot,
 }) => {
   return (
     <header className="w-full bg-slate-950 border-b border-slate-800 text-slate-200 font-mono">
@@ -129,6 +131,13 @@ export const HeaderDeck: React.FC<HeaderDeckProps> = ({
           >
             <span>MYTH ENGINE</span>
           </button>
+
+          {authSlot && (
+            <>
+              <div className="h-5 w-px bg-slate-800 mx-1 hidden sm:block" />
+              {authSlot}
+            </>
+          )}
         </div>
       </div>
 
